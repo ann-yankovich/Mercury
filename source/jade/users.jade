@@ -1,0 +1,129 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title text
+		include inc/head
+	body(class="p-workflow")
+
+		+b('div').page-wrap
+		
+			include partials/aside
+
+			+b('div').content
+
+				include partials/header
+
+				.b-container
+					+b('span').title Users 
+						+e('span').count (13)
+					
+					+b('table').users
+						+e('tr').tr
+							+e('th').th Name
+							+e('th').th Last activity
+							+e('th').th Mail
+							+e('th').th Phone
+							+e('th').th
+						+e('tr').tr
+							+e('td').td
+								+e().avatar-wrap_online
+									+e('img')(src="http://placehold.it/70x70").avatar
+								+e('').info
+									+e('span').name John Doe
+									+e('span').post CEO
+							+e('td').td
+								+time('green')
+							+e('td').td patricksmith@design.com
+							+e('td').td (000) 111 222 333
+							+e('td').td_center
+								+b('a')(href="#").edit
+									+e('span').dot
+						+e('tr').tr
+							+e('td').td
+								+e().avatar-wrap_online
+									+e('img')(src="http://placehold.it/70x70").avatar
+								+e('').info
+									+e('span').name John Doe
+									+e('span').post CEO
+							+e('td').td
+								+time('green')
+							+e('td').td patricksmith@design.com
+							+e('td').td (000) 111 222 333
+							+e('td').td_center
+								+b('a')(href="#").edit
+									+e('span').dot
+						+e('tr').tr
+							+e('td').td
+								+e().avatar-wrap_online
+									+e('img')(src="http://placehold.it/70x70").avatar
+								+e('').info
+									+e('span').name John Doe
+									+e('span').post CEO
+							+e('td').td
+								+time('green')
+							+e('td').td patricksmith@design.com
+							+e('td').td (000) 111 222 333
+							+e('td').td_center
+								+b('a')(href="#").edit
+									+e('span').dot
+						+e('tr').tr
+							+e('td').td
+								+e().avatar-wrap
+									+e('img')(src="http://placehold.it/70x70").avatar
+								+e('').info
+									+e('span').name John Doe
+									+e('span').post CEO
+							+e('td').td
+								+time('black')
+							+e('td').td patricksmith@design.com
+							+e('td').td (000) 111 222 333
+							+e('td').td_center
+								+b('a')(href="#").edit
+									+e('span').dot
+						+e('tr').tr
+							+e('td').td
+								+e().avatar-wrap_online
+									+e('img')(src="http://placehold.it/70x70").avatar
+								+e('').info
+									+e('span').name John Doe
+									+e('span').post CEO
+							+e('td').td
+								+time('green')
+							+e('td').td patricksmith@design.com
+							+e('td').td (000) 111 222 333
+							+e('td').td_center
+								+b('a')(href="#").edit
+									+e('span').dot
+						+e('tr').tr
+							+e('td').td
+								+e().avatar-wrap
+									+e('img')(src="http://placehold.it/70x70").avatar
+								+e('').info
+									+e('span').name John Doe
+									+e('span').post CEO
+							+e('td').td
+								+time('black')
+							+e('td').td patricksmith@design.com
+							+e('td').td (000) 111 222 333
+							+e('td').td_center
+								+b('a')(href="#").edit
+									+e('span').dot
+					
+					+b().paging
+						+e('a')(href="#").prev
+						+e('a')(href="#").item_active 1
+						+e('a')(href="#").item 2
+						+e('a')(href="#").item 3
+						+e('a')(href="#").item 4
+						+e('a')(href="#").item 5
+						+e('a')(href="#").next
+
+
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

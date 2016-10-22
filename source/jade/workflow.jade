@@ -1,0 +1,48 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title text
+		include inc/head
+	body(class="p-workflow")
+
+		+b('div').page-wrap
+		
+			include partials/aside
+
+			+b('div').content
+
+				include partials/header
+
+				.b-container
+					+e('').cols-wrap
+						+e().col
+							+b('span').title_arr-r To Do 
+								+e('span').count (3)
+							+task_item
+							+task_item
+							+task_item
+							+task_item
+							+task_item
+							+task_item
+						+e().col
+							+b('span').title_arr-r In Progress 
+								+e('span').count (3)
+							+task_item
+							+task_item
+							+task_item('red')
+						+e().col
+							+b('span').title_arr-r Completed 
+								+e('span').count (3)
+							+task_item
+							+task_item('completed')
+							+task_item('completed')
+							+task_item
+
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

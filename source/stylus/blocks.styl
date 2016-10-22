@@ -1,0 +1,429 @@
+.b-page-wrap
+	display table
+	width 100%
+
+.b-content
+	display table-cell
+	vertical-align top
+	&__cols-wrap
+		font-size 0px
+	&__col
+		display inline-block
+		width (100/3)%
+		padding 0px 20px
+		vertical-align top
+
+.b-container
+	padding 0px 45px
+	overflow hidden
+
+.b-header
+	display table
+	width 100%
+	padding 30px 40px
+	background-color #fff
+	border-bottom 1px solid $grey_light
+	&__left, &__right
+		display table-cell
+		vertical-align middle
+	&__right
+		text-align right
+	&__item
+		display inline-block
+		margin-right 30px
+		vertical-align middle
+		&_menu
+			sprite($s-menu)
+		&_search
+			sprite($s-loupe)
+		&_messages
+			sprite($s-message)
+		&_notifications
+			sprite($s-bell)
+	&__avatar
+		border-radius 50%
+	.b-btn
+		margin-right 50px
+
+.b-aside
+	display table-cell
+	width 320px
+	background-color #0e1a35
+	vertical-align top
+	&__logo-wrap
+		padding 30px 0px 40px 40px
+		border-bottom 2px solid #0d172e
+
+.b-menu
+	&__item
+		position relative
+		display block
+		padding 40px 50px
+		border-bottom 2px solid #0d172e
+		color #fff
+		font-size 24px
+		font-weight 500
+		text-decoration none
+		transition all .3s
+		&:hover
+			background-color #122143
+			&::after
+				content ''
+				display block
+				width 10px
+				height 100%
+				position absolute
+				top 0px
+				left 0px
+				background-color #5584ff
+		&::before
+			content ''
+			display inline-block
+			margin-right 15px
+		&_home
+			&::before
+				sprite($s-home)
+		&_flow
+			&::before
+				sprite($s-workflow)
+		&_stat
+			&::before
+				sprite($s-stat)
+		&_calendar
+			&::before
+				sprite($s-calend)
+		&_users
+			&::before
+				sprite($s-user-small)
+		&_set
+			&::before
+				sprite($s-settings)
+
+.b-title
+	display block
+	margin 60px 0px 30px
+	color #0e1a35
+	font-size 36px
+	font-weight 500
+	&__count
+		color $grey
+	&_arr-r
+		position relative
+		&::after
+			content ''
+			position absolute
+			top 3px
+			right 0px
+			display block
+			sprite($s-arr-r-big)
+
+.p-main
+	background-image url(../img/bg-enter.jpg)
+	background-repeat no-repeat
+	background-size cover
+	background-position center bottom
+
+.b-log-forms
+	position absolute
+	top 50%
+	left 50%
+	width 1220px
+	max-width 80%
+	background-color #f6f7fa
+	box-shadow 0px 0px factor(140) 0px #93a1b9
+	transform translate(-50%, -50%)
+	&__links
+		display table-cell
+		text-align right
+	&__logo
+		// display table-cell
+		vertical-align middle
+	&__tab-link
+		display inline-block
+		padding 0px factor(50)
+		color #fff
+		font-size 24px
+		font-weight 500
+		line-height factor(145)
+		text-decoration none
+		vertical-align middle
+		border-bottom factor(10) solid transparent
+		&_active
+			border-bottom factor(10) solid $blue
+		&:last-child
+			padding-right factor(60)
+	&__top
+		display table
+		width 100%
+		padding-left factor(45)
+		background-color $darkBlue
+
+.b-form
+	width 575px
+	margin 0px auto
+	padding factor(90) 0px factor(100)
+	text-align center
+	display none
+	&_active
+		display block
+	&__btn-wrap
+		position relative
+		display inline-block
+		margin-top factor(125)
+		&::after
+			content ''
+			position absolute
+			top 50%
+			margin-top -5px
+			right 50px
+			display block
+			sprite($s-arr-r)
+	&__title
+		margin-bottom factor(120)
+		color $grey
+		font-size 48px
+		text-align center
+		&_blue
+			color #5384ff
+	&__input-wrap
+		position relative
+		border-bottom 1px solid $grey_light
+		&::before
+			content ''
+			position absolute
+			left factor(10)
+			bottom factor(15)
+			display block
+		&_login
+			&::before
+				sprite($s-user)
+		&_pass
+			&::before
+				sprite($s-lock)
+
+.b-input
+	display block
+	width 100%
+	height factor(60)
+	margin-bottom factor(50)
+	background-color transparent
+	border 0px
+	border-bottom 1px solid $grey_light
+	color $darkBlue
+	font-size 24px
+	padding-left factor(68)
+	placeholder($grey)
+
+.b-btn
+	display inline-block
+	width factor(388)
+	// height factor(70)
+	height 70px
+	border 0px
+	// border-radius factor(32)
+	border-radius 32px
+	background-color $blue
+	color #fff
+	font-size 24px
+	font-weight 700
+	text-align center
+	text-decoration none
+	&_small
+		width 180px
+		height 48px
+		font-size 18px
+		line-height 48px
+	&_add
+		&::before
+			content ''
+			display inline-block
+			margin-right 15px
+			sprite($s-plus)
+
+.b-task-item
+	margin-bottom 10px
+	padding 30px
+	background-color #fff
+	border 1px solid $grey_light
+	// white-space nowrap
+	&__inside
+		display inline-block
+		// padding-right 20px
+		overflow hidden
+	&__title
+		display block
+		margin-bottom 10px
+		font-size 20px
+		font-weight 500
+	&::before
+		content attr(data-letter)
+		float left
+		display inline-block
+		width 45px
+		height 45px
+		line-height 45px
+		margin-right 22px
+		background-color $blue
+		border-radius 50%
+		color #fff
+		font-size 24px
+		text-align center
+	.b-edit
+		float right
+
+.b-time
+	display block
+	color $grey
+	font-size 14px
+	font-weight 300
+	&::before
+		content ''
+		display inline-block
+		margin-right 5px
+		sprite($s-time-grey)
+		vertical-align middle
+	&_red
+		color #f83c7b
+		&::before
+			sprite($s-time-red)
+	&_green
+		color #00bf1b
+		&::before
+			sprite($s-time-green)
+	&_black
+		&::before
+			sprite($s-time-black)
+	&_completed
+		color #00bf1b
+		&::before
+			sprite($s-time-completed)
+
+.b-edit
+	// position relative
+	display inline-block
+	&__dot, &:before, &::after
+		display block
+		width 7px
+		height 7px
+		background-color $grey
+		border-radius 50%
+		margin-bottom 6px
+	&:before, &::after
+		content ''
+	&::after
+		margin-bottom 0px
+
+.b-users
+	width 100%
+	font-size 20px
+	font-weight 500
+	margin-bottom 50px
+	.b-time
+		font-size 20px
+		font-weight 500
+	&__th
+		padding 20px 30px
+		color $grey
+		text-align left
+	&__td
+		padding 25px 30px
+		background-color #fff
+		border 1px solid $grey_light
+		color $darkBlue
+		vertical-align middle
+		&_center
+			text-align center
+	&__avatar
+		border-radius 50%
+	&__avatar-wrap
+		position relative
+		display inline-block
+		vertical-align middle
+		margin-right 25px
+		&_online
+			&:after
+				content ''
+				position absolute
+				top 3px
+				right 3px
+				display block
+				width 14px
+				height 14px
+				background-color #00bf1b
+				border 3px solid #fff
+				border-radius 50%
+	&__info
+		display inline-block
+		vertical-align middle
+	&__name
+		display block
+		margin-bottom 5px
+	&__post
+		display block
+		color $grey
+
+.b-paging
+	margin 0px auto 50px
+	text-align center
+	&__item
+		display inline-block
+		width 40px
+		height 40px
+		line-height 40px
+		margin-right 1px
+		background-color #fff
+		box-shadow 1px 1px 2px 0px alpha(#d2d9e8, .4)
+		color $darkBlue
+		font-size 20px
+		font-weight 500
+		text-decoration none
+		vertical-align middle
+		&_active, &:hover
+			color #5584ff
+	&__prev, &__next
+		display inline-block
+		vertical-align middle
+		&:hover
+			opacity .8
+	&__prev
+		margin-right 13px
+		sprite($s-paging-prev)
+	&__next
+		margin-left 13px
+		sprite($s-paging-next)
+
+.b-calendar
+	width 100%
+	background-color #fff
+	font-size 20px
+	font-weight 300
+	margin-bottom 50px
+	table-layout fixed
+	&__th
+		padding 30px
+		text-transform uppercase
+		vertical-align middle
+	&__th, &__td
+		border 1px solid $grey_light
+	&__td
+		position relative
+		padding 80px 2px 2px 2px
+		vertical-align bottom
+		&_grey
+			color $grey
+	&__day
+		position absolute
+		top 0px
+		display block
+		margin 30px
+	&__task
+		margin-bottom 2px
+		padding 15px 20px
+		background-color #f6f7fa
+		border-width 0px 0px 0px 5px
+		border-style solid
+		font-size 14px
+		&_blue
+			border-color #5584ff
+		&_pink
+			border-color #f83c7b

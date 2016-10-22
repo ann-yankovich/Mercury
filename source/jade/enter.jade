@@ -1,0 +1,41 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title text
+		include inc/head
+
+	body(class="p-main")
+	
+		+b('').log-forms
+			+e('').top
+				+e('img')(src="img/logo.png").logo
+				+e().links
+					+e('a')(href="#").tab-link Register
+					+e('a')(href="#").tab-link_active Login
+			+e('').content
+				+b('form').form
+					+e('div').title Register
+					+e('').input-wrap_login
+						+b('input')(type="text" placeholder="Username").input
+					+e('').input-wrap_pass
+						+b('input')(type="password" placeholder="Password").input
+					+e('').btn-wrap
+						+b('input')(type="submit" value="Enter").btn
+				+b('form').form_active
+					+e('div').title Welcome 
+						+e('span').title_blue back
+					+e('').input-wrap_login
+						+b('input')(type="text" placeholder="Username").input
+					+e('').input-wrap_pass
+						+b('input')(type="password" placeholder="Password").input
+					+e('').btn-wrap_arrow
+						+b('input')(type="submit" value="Enter").btn
+
+		include inc/vendor-scripts
+		script(src="js/client.min.js")
