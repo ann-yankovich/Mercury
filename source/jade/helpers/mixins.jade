@@ -4,7 +4,30 @@ mixin task_item(status)
 			+e('span').title New website for JCD.pl
 			+time(status)
 		+b('a')(href="#").edit
-			+e('span').dot
+			//- +e('span').dot
+			
+mixin event_item(color)
+	if color == 'pink'
+		+b('').event_pink Meeting with Will Smith
+	else if color == 'blue'
+		+b('').event_blue Meeting with Will Smith
+			+e().info
+				+e().top
+				+e().middle
+					+e('').item 
+						+e('span').key Title
+						+e('span').value Meeting with Will Smith
+					+e('').item 
+						+e('span').key Starts
+						+e('span').value 3:00pm
+					+e('').item 
+						+e('span').key Ends
+						+e('span').value 6:00pm
+					+e('').item 
+						+e('span').key Place
+						+e('span').value Symu Co
+				+e().bottom
+					+b('a')(href="#").btn_small Edit event
 
 
 mixin time(status)

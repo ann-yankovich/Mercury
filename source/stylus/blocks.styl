@@ -47,30 +47,31 @@
 
 .b-aside
 	display table-cell
-	width 320px
+	// width 320px
+	width 220px
 	background-color #0e1a35
 	vertical-align top
 	&__logo-wrap
-		padding 30px 0px 40px 40px
-		border-bottom 2px solid #0d172e
+		padding 15px 0px 20px 20px
+		border-bottom 1px solid #0d172e
 
 .b-menu
 	&__item
 		position relative
 		display block
-		padding 40px 50px
-		border-bottom 2px solid #0d172e
+		padding 20px 25px
+		border-bottom 1px solid #0d172e
 		color #fff
-		font-size 24px
+		font-size 14px
 		font-weight 500
 		text-decoration none
 		transition all .3s
-		&:hover
+		&:hover, &_active
 			background-color #122143
 			&::after
 				content ''
 				display block
-				width 10px
+				width 5px
 				height 100%
 				position absolute
 				top 0px
@@ -101,9 +102,10 @@
 
 .b-title
 	display block
-	margin 60px 0px 30px
+	margin 40px 0px 20px
 	color #0e1a35
-	font-size 36px
+	// font-size 36px
+	font-size 24px
 	font-weight 500
 	&__count
 		color $grey
@@ -252,8 +254,8 @@
 		overflow hidden
 	&__title
 		display block
-		margin-bottom 10px
-		font-size 20px
+		margin-bottom 7px
+		font-size 14px
 		font-weight 500
 	&::before
 		content attr(data-letter)
@@ -274,7 +276,7 @@
 .b-time
 	display block
 	color $grey
-	font-size 14px
+	font-size 12px
 	font-weight 300
 	&::before
 		content ''
@@ -299,19 +301,27 @@
 			sprite($s-time-completed)
 
 .b-edit
-	// position relative
+	position relative
 	display inline-block
-	&__dot, &:before, &::after
+	width 7px
+	height 7px
+	background-color $grey
+	border-radius 50%
+	margin-bottom 6px
+	&:before, &::after
 		display block
 		width 7px
 		height 7px
 		background-color $grey
 		border-radius 50%
-		margin-bottom 6px
 	&:before, &::after
 		content ''
+		position absolute
+		left 0px
+	&::before
+		top -12px
 	&::after
-		margin-bottom 0px
+		top 12px
 
 .b-users
 	width 100%
@@ -395,19 +405,19 @@
 .b-calendar
 	width 100%
 	background-color #fff
-	font-size 20px
+	font-size 14px
 	font-weight 300
 	margin-bottom 50px
 	table-layout fixed
 	&__th
-		padding 30px
+		padding 20px
 		text-transform uppercase
 		vertical-align middle
 	&__th, &__td
 		border 1px solid $grey_light
 	&__td
 		position relative
-		padding 80px 2px 2px 2px
+		padding 56px 2px 2px 2px
 		vertical-align bottom
 		&_grey
 			color $grey
@@ -415,15 +425,48 @@
 		position absolute
 		top 0px
 		display block
-		margin 30px
-	&__task
-		margin-bottom 2px
-		padding 15px 20px
-		background-color #f6f7fa
-		border-width 0px 0px 0px 5px
-		border-style solid
-		font-size 14px
-		&_blue
-			border-color #5584ff
-		&_pink
-			border-color #f83c7b
+		margin 20px
+
+.b-event
+	position relative
+	margin-bottom 2px
+	padding 11px 14px
+	background-color #f6f7fa
+	border-width 0px 0px 0px 5px
+	border-style solid
+	font-size 12px
+	&:hover
+		.b-event
+			&__info
+				display block
+	&_blue
+		border-color #5584ff
+	&_pink
+		border-color #f83c7b
+	&__info
+		position absolute
+		right -20px
+		top 0px
+		display none
+		width 300px
+		background-color #fff
+		box-shadow 0px 13px 27px 0px alpha(#8492af, .3)
+		transform translateX(100%)
+		z-index 5
+	&__top
+		padding 25px 30px
+		border-bottom 1px solid $grey
+	&__middle
+		padding 25px 30px
+		border-bottom 1px solid $grey_light
+	&__bottom
+		padding 30px 0px
+		text-align center
+	&__item
+		margin-bottom 15px
+		white-space nowrap
+	&__key
+		color $grey
+		text-transform uppercase
+	&__value
+		float right
